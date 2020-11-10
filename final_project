@@ -1,0 +1,14 @@
+class Music:
+    """ """
+    def __init__():
+        """ initialize variables that we need
+            Will change as we work on code
+        """
+    def mood():
+        """ """
+    def shuffle():
+        """ """
+    def function():
+        """ """
+    def function2():
+        """ """
