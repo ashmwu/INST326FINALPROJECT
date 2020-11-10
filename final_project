@@ -1,13 +1,20 @@
 class Music:
-    """ """
+    """ A music selection app that can pick songs based on mood.
+        Shuffle songs in a random order
+        
+        Attributes:
+            ___
+            ___
+            ___
+    """
     def __init__():
         """ initialize variables that we need
             Will change as we work on code
         """
     def mood():
-        """ """
+        """Select a mood to be able to get a list of songs that match the mood. """
     def shuffle():
-        """ """
+        """ Randomly shuffles the music"""
     def function():
         """ """
     def function2():
