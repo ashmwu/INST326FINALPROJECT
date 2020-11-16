@@ -23,4 +23,4 @@ class MusicApp:
     def function():
         """ """
     def function2():
-        """ """
+        """ Random wueot """
