@@ -23,4 +23,6 @@ class MusicApp:
     def function():
         """ """
     def function2():
-        """ Random wueot """
+        """ """
+    def suggest():
+        "Based off rencent history make music suggestions "
