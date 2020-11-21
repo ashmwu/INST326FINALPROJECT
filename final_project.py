@@ -25,4 +25,9 @@ class MusicApp:
     def function2():
         """ """
     def suggest():
-        "Based off rencent history make music suggestions "
+        """ Based off recent history make music suggestions. Make 
+        suggestions based on artist, genre, album """
+    def share():
+        """Share music currently listening to on social media """
+    
+        
