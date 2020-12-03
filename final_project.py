@@ -20,7 +20,8 @@ class MusicApp:
         """Select a mood to be able to get a list of songs that match the mood. """
     def shuffle():
         """ Randomly shuffles the music"""
-    def function():
-        """ """
+    def createUser():
+        """Setting up user account """
+        
     def function2():
         """ """
