@@ -29,9 +29,9 @@ class MusicApp:
         suggestions based on artist, genre, album """
     def share():
         """Share music currently listening to on social media """
-    def lyrics():
-        """Will pull up the lyrics of a song"""
-    def recently_played():
-        """Creates a list of the ten most recently played songs."""
+    def download():
+        """ This will pull songs the user wants from the database in order to download it on their phone """
+    def library():
+        """ This will store all music that has been downloaded to the library"""
     
         
