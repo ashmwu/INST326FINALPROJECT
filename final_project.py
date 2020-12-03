@@ -35,6 +35,11 @@ class MusicApp:
     def recently_searched():
         """Creates a list of the ten most recently played songs."""
         searched = []
-        searched[track_name]
-        
+        #
+        searched.append[]
+        recent_search = searched[::-1]
+        reversed_list = systems[::-1]
+        if len(recent_search) > 10:
+            del searched[11:]
+        return recent_search
         
