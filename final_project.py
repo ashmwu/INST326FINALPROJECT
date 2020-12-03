@@ -1,5 +1,5 @@
 #find a database with a list of songs to import from then replace the line below
-import playlist from database
+import pandas as pd
 class MusicApp:
     """ A music selection app similar to Spotify. 
         Creates/plays playlist based on user's mood.
@@ -25,3 +25,19 @@ class MusicApp:
         
     def function2():
         """ """
+    def suggest():
+        """ Based off recent history make music suggestions. Make 
+        suggestions based on artist, genre, album """
+    def share():
+        """Share music currently listening to on social media """
+    def library():
+        """ This will store all music that has been downloaded to the library"""
+    def search():
+        """Searches for the song"""
+        
+    def recently_searched():
+        """Creates a list of the ten most recently played songs."""
+        searched = []
+        searched[track_name]
+        
+        
