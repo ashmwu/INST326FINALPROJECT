@@ -32,6 +32,6 @@ class MusicApp:
     def lyrics():
         """Will pull up the lyrics of a song"""
     def recently_played():
-        """Creates a list of the ten most recently played songs"""
+        """Creates a list of the ten most recently played songs."""
     
         
