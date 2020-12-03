@@ -31,9 +31,12 @@ class MusicApp:
         """Share music currently listening to on social media """
     def library():
         """ This will store all music that has been downloaded to the library"""
-    def lyrics():
-        """Will pull up the lyrics of a song"""
-    def recently_played():
+    def search():
+        """Searches for the song in the csv file"""
+        
+    def recently_searched():
         """Creates a list of the ten most recently played songs."""
-    
+        searched = []
+        searched[track_name]
+        
         
