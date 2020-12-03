@@ -29,5 +29,9 @@ class MusicApp:
         suggestions based on artist, genre, album """
     def share():
         """Share music currently listening to on social media """
+    def lyrics():
+        """Will pull up the lyrics of a song"""
+    def recently_played():
+        """Creates a list of the ten most recently played songs"""
     
         
