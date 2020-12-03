@@ -22,9 +22,6 @@ class MusicApp:
         """ Randomly shuffles the music"""
     def createUser():
         """Setting up user account """
-        
-    def function2():
-        """ """
     def suggest():
         """ Based off recent history make music suggestions. Make 
         suggestions based on artist, genre, album """
