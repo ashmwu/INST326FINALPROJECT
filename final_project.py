@@ -48,7 +48,13 @@ class MusicApp:
                     if row['popularity'] > 50:
                         print(row['track_name'])
     def search(self):
-        #with open('Musiclist_326_projects.csv') as f: 
+        with open('Musiclist_326_projects.csv') as f:
+            
+            
+        
+                    
+                
+        
         
     def suggest():
         """ Based off recent history make music suggestions. Make 
@@ -74,7 +80,7 @@ class MusicApp:
             
     def recently_searched(self):
         """Organizes list that is in suggest function to show the most recently searched artists. 
-           Will return the list with the most recent in the 0 position in the list."""
+           Will return the list with the most recent in the 0 position."""
         recent_search = searched[::-1]
         if len(recent_search) > 10:
             del searched[10:]
