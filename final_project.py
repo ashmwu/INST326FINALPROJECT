@@ -18,14 +18,20 @@ class MusicApp:
         
     """
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
+=======
+>>>>>>> 9ae620b5fd5182523c19923eb56dc97ec23bebb2
     def createUser():
         """Setting up user account """
         user = input(print("Create a Username: "))
         pw = input(print("Create a password: "))
         
+<<<<<<< HEAD
 >>>>>>> 04e67644f43538afc39950bfaa6df537ba1878ae
+=======
+>>>>>>> 9ae620b5fd5182523c19923eb56dc97ec23bebb2
     searched = []
     def __init__(self, genre, artist, playlist, users):
         """ initialize variables that we need
@@ -57,6 +63,7 @@ class MusicApp:
         #with open('Musiclist_326_projects.csv') as f: 
         
 <<<<<<< HEAD
+<<<<<<< HEAD
                     
                 
     
@@ -69,6 +76,11 @@ class MusicApp:
         """ Based off recent history make music suggestions. Make 
         suggestions based on artist, genre, album """
 >>>>>>> 04e67644f43538afc39950bfaa6df537ba1878ae
+=======
+    def suggest():
+        """ Based off recent history make music suggestions. Make 
+        suggestions based on artist, genre, album """
+>>>>>>> 9ae620b5fd5182523c19923eb56dc97ec23bebb2
 
     def share():
         """Share music currently listening to on social media """
@@ -98,14 +110,22 @@ class MusicApp:
         return recent_search
     
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
         
 =======
 if __name__ == "__main__":
+=======
+if __name__ == "__main__":
+   
+>>>>>>> 9ae620b5fd5182523c19923eb56dc97ec23bebb2
     
     createUser()
     #m = MusicApp()
     #m.suggest('Rihanna')
     
+<<<<<<< HEAD
 >>>>>>> 04e67644f43538afc39950bfaa6df537ba1878ae
+=======
+>>>>>>> 9ae620b5fd5182523c19923eb56dc97ec23bebb2
