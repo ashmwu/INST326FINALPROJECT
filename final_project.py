@@ -1,13 +1,9 @@
 #find a database with a list of songs to import from then replace the line below
-<<<<<<< HEAD
 import playlist from database
-
+import pandas as pd 
 import csv 
 
 
-=======
-import pandas as pd
->>>>>>> e17ccdf91452e7d30a88850e3364dc65c7491795
 class MusicApp:
     """ A music selection app similar to Spotify. 
         Creates/plays playlist based on user's mood.
@@ -23,6 +19,7 @@ class MusicApp:
         """
         self.genre = genre 
         self. artist = artist 
+        
         mood = [happy, sad, angry, frusterated, jealously, heartbreak, excited]
         artist = [Ariana Grande, BTS, Justin Bieber, Pop Smoke]
         genre = [EDM, Pop, Rap, Lo-fi, K-Pop, Country, Indie]
@@ -30,7 +27,6 @@ class MusicApp:
         """Select a mood to be able to get a list of songs that match the mood. """
     def shuffle():
         """ Randomly shuffles the music"""
-<<<<<<< HEAD
     def function():
         """ """
     def function2():
@@ -59,12 +55,6 @@ class MusicApp:
         """Share music currently listening to on social media """
     def library():
         """ This will store all music that has been downloaded to the library"""
-<<<<<<< HEAD
-    def lyrics():
-        """Will pull up the lyrics of a song"""
-    def 
-    
-=======
     def search():
         """Searches for the song"""
         
@@ -78,5 +68,4 @@ class MusicApp:
         if len(recent_search) > 10:
             del searched[11:]
         return recent_search
->>>>>>> e17ccdf91452e7d30a88850e3364dc65c7491795
         
