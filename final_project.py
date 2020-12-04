@@ -17,6 +17,11 @@ class MusicApp:
         artist(list of artist): a list of artists
         
     """
+    def createUser():
+        """Setting up user account """
+        user = input(print("Create a Username: "))
+        pw = input(print("Create a password: "))
+        
     searched = []
     def __init__(self, genre, artist, playlist, users):
         """ initialize variables that we need
@@ -51,14 +56,11 @@ class MusicApp:
                     
                 
         
-=======
-    def createUser():
-        """Setting up user account """
         
     def suggest():
         """ Based off recent history make music suggestions. Make 
         suggestions based on artist, genre, album """
->>>>>>> e17ccdf91452e7d30a88850e3364dc65c7491795
+
     def share():
         """Share music currently listening to on social media """
     def library():
@@ -85,7 +87,10 @@ class MusicApp:
             del searched[10:]
         return recent_search
     
-
-m = MusicApp()
-m.suggest('Rihanna')
-        
+if __name__ == "__main__":
+   
+    
+    createUser()
+    #m = MusicApp()
+    #m.suggest('Rihanna')
+    
