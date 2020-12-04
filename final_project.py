@@ -74,7 +74,8 @@ class MusicApp:
                 
             
     def recently_searched(self):
-        """Creates a list of the ten most recently searched artists from suggest function"""
+        """Organizes list that is in suggest function to show the most recently searched artists. 
+           Will return the list with the most recent in the 0 position in the list."""
         recent_search = searched[::-1]
         if len(recent_search) > 10:
             del searched[10:]
