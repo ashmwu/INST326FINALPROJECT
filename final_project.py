@@ -17,6 +17,11 @@ class MusicApp:
         artist(list of artist): a list of artists
         
     """
+    def createUser():
+        """Setting up user account """
+        user = input(print("Create a Username: "))
+        pw = input(print("Create a password: "))
+        
     searched = []
     def __init__(self, genre, artist, playlist, users):
         """ initialize variables that we need
@@ -44,16 +49,7 @@ class MusicApp:
                     if row['popularity'] > 50:
                         print(row['track_name'])
     def search(self):
-        with open('Musiclist_326_projects.csv') as f: 
-            
-            
-        
-                    
-                
-        
-=======
-    def createUser():
-        """Setting up user account """
+        #with open('Musiclist_326_projects.csv') as f: 
         
     def suggest():
         """ Based off recent history make music suggestions. Make 
@@ -84,7 +80,9 @@ class MusicApp:
             del searched[10:]
         return recent_search
     
-
-m = MusicApp()
-m.suggest('Rihanna')
-        
+if __name__ == "__main__":
+    
+    createUser()
+    #m = MusicApp()
+    #m.suggest('Rihanna')
+    
