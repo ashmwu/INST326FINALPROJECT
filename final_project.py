@@ -12,6 +12,7 @@ class MusicApp:
         Attributes:
             
     """
+    searched = []
     def __init__(self, genre, artist):
         """ initialize variables that we need
             Will change as we work on code
@@ -26,15 +27,12 @@ class MusicApp:
         """Select a mood to be able to get a list of songs that match the mood. """
     def shuffle():
         """ Randomly shuffles the music"""
-    def function():
-        """ """
-    def function2():
-        """ """
     def suggest(self):
         """ The user enters an artist's name and the function returns that artist's more popular songs.  """
         
         with open('Musiclist_326_projects.csv') as f:
             spreadsheet = csv.Dictreader(f)
+            searched.append[self.artist]
             for row in spreadsheet:
                 if self.artist in row['artist_name']:
                     if row['popularity'] > 50:
@@ -53,17 +51,10 @@ class MusicApp:
         """Share music currently listening to on social media """
     def library():
         """ This will store all music that has been downloaded to the library"""
-    def search():
-        """Searches for the song"""
-        
-    def recently_searched():
-        """Creates a list of the ten most recently played songs."""
-        searched = []
-        #
-        searched.append[]
+    def recently_searched(self):
+        """Creates a list of the ten most recently searched artists from suggest function"""
         recent_search = searched[::-1]
-        reversed_list = systems[::-1]
         if len(recent_search) > 10:
-            del searched[11:]
+            del searched[10:]
         return recent_search
         
