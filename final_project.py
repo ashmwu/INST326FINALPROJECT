@@ -1,6 +1,8 @@
 #find a database with a list of songs to import from then replace the line below
 import pandas as pd 
 import csv 
+import sys
+import random
 
 
 class MusicApp:
@@ -10,23 +12,36 @@ class MusicApp:
         
         
         Attributes:
-            
+        playlist(list of songs): a list of songs
+        genre(list of genre): a list of genres
+        artist(list of artist): a list of artists
+        
     """
+<<<<<<< HEAD
+    
+=======
+    def createUser():
+        """Setting up user account """
+        user = input(print("Create a Username: "))
+        pw = input(print("Create a password: "))
+        
+>>>>>>> 04e67644f43538afc39950bfaa6df537ba1878ae
     searched = []
-    def __init__(self, genre, artist):
+    def __init__(self, genre, artist, playlist, users):
         """ initialize variables that we need
             Will change as we work on code
         """
         self.genre = genre 
         self.artist = artist 
+        self.playlist = playlist
         
-        mood = [happy, sad, angry, frusterated, jealously, heartbreak, excited]
-        artist = [Ariana Grande, BTS, Justin Bieber, Pop Smoke]
-        genre = [EDM, Pop, Rap, Lo-fi, K-Pop, Country, Indie]
     def mood():
         """Select a mood to be able to get a list of songs that match the mood. """
-    def shuffle():
-        """ Randomly shuffles the music"""
+    def shuffle(self):
+        """ Randomly shuffles the music in a specific playlist."""
+        f = open("Musiclist_326_project.csv", "r")
+        playlist.random(f)
+        
     def suggest(self):
         """ The user enters an artist's name and the function returns that artist's more popular songs.  """
         
@@ -37,23 +52,27 @@ class MusicApp:
                 if self.artist in row['artist_name']:
                     if row['popularity'] > 50:
                         print(row['track_name'])
+                        
     def search(self):
-        with open('Musiclist_326_projects.csv') as f: 
-            
-            
+        #with open('Musiclist_326_projects.csv') as f: 
         
+<<<<<<< HEAD
                     
                 
-        
-=======
+    
+
     def createUser():
         """Setting up user account """
+        
+=======
     def suggest():
         """ Based off recent history make music suggestions. Make 
         suggestions based on artist, genre, album """
->>>>>>> e17ccdf91452e7d30a88850e3364dc65c7491795
+>>>>>>> 04e67644f43538afc39950bfaa6df537ba1878ae
+
     def share():
         """Share music currently listening to on social media """
+        
     def library():
         """ This will store all music that has been downloaded to the library"""
         genre = []
@@ -71,13 +90,22 @@ class MusicApp:
                 
             
     def recently_searched(self):
-        """Creates a list of the ten most recently searched artists from suggest function"""
+        """Organizes list that is in suggest function to show the most recently searched artists. 
+           Will return the list with the most recent in the 0 position in the list."""
         recent_search = searched[::-1]
         if len(recent_search) > 10:
             del searched[10:]
         return recent_search
     
+<<<<<<< HEAD
 
-m = MusicApp()
-m.suggest('Rihanna')
+
         
+=======
+if __name__ == "__main__":
+    
+    createUser()
+    #m = MusicApp()
+    #m.suggest('Rihanna')
+    
+>>>>>>> 04e67644f43538afc39950bfaa6df537ba1878ae
