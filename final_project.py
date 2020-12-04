@@ -82,6 +82,8 @@ class MusicApp:
         return recent_search
     
 if __name__ == "__main__":
+    args = parse_args(sys.argv[1:])
+    movie_database(args.csv, args.song )
     
     createUser()
     #m = MusicApp()
