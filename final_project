@@ -13,7 +13,7 @@ def Musiclist_326_project.csv (csv, song):
     pd.set_option('display.max_rows', None)
     """ makes a table based on genre,etc.."""
     df = pd.read_csv(csv)
-    print(df[df["movie"]== film])
+    print(df[df["song"]== song])
     
 class Music:
     """ A music selection app that can pick songs based on mood.
