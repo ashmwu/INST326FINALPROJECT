@@ -4,7 +4,22 @@ import csv
 import sys
 import random
 
+from argparse import ArgumentParser
+import pandas as pd
+import sys
 
+def Musiclist_326_project.csv (csv, song):
+    """ This method reads a CSV file containing the different kind of songs and other information that goes along with it.
+    Args:
+        csv (str): a string that allows the csv file to be read.
+        song (str): the type of song you are looking for (song, genre, etc)  
+    Returns:
+        A DataFrame that displays songs that match your prefrence.
+    """
+    pd.set_option('display.max_rows', None)
+    """ makes a table based on genre,etc.."""
+    df = pd.read_csv(csv)
+    print(df[df["song"]== song])
 class MusicApp:
     """ A music selection app similar to Spotify. 
         Creates/plays playlist based on user's mood.
@@ -23,6 +38,7 @@ class MusicApp:
         user = input(print("Create a Username: "))
         pw = input(print("Create a password: "))
         
+
     searched = []
     def __init__(self, genre, artist, playlist, users):
         """ initialize variables that we need
@@ -54,19 +70,12 @@ class MusicApp:
         with open('Musiclist_326_projects.csv') as f:
             
             
-        
-                    
-                
-        
-        
-
-                    
-                
     
 
     def createUser():
         """Setting up user account """
-        
+      
+
     def share():
         """Share music currently listening to on social media """
         
@@ -95,10 +104,11 @@ class MusicApp:
         return recent_search
     
 
+
 if __name__ == "__main__":
+
+
    
 
-    createUser()
-    #m = MusicApp()
-    #m.suggest('Rihanna')
     
+
