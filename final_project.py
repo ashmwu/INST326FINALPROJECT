@@ -43,7 +43,12 @@ class MusicApp:
                 if self.artist in row['artist_name']:
                     if row['popularity'] > 50:
                         print(row['track_name'])
-                
+    def search(self):
+        with open('Musiclist_326_projects.csv') as f: 
+            
+            
+        
+                    
                 
         
 =======
@@ -58,10 +63,28 @@ class MusicApp:
         """Share music currently listening to on social media """
     def library():
         """ This will store all music that has been downloaded to the library"""
+        genre = []
+        artist = []
+        track = []
+        with open('Musiclist_326_projects.csv') as f:
+            spreadsheet = csv.Dictreader(f)
+            for row in spreadsheet:
+                if row['genre'] not in genre:
+                    genre.append(row['genre'])
+                if row['artist_name'] not in artist:
+                    artist.append(row['artist_name'])
+                track.append(row['track_name'])
+                
+                
+            
     def recently_searched(self):
         """Creates a list of the ten most recently searched artists from suggest function"""
         recent_search = searched[::-1]
         if len(recent_search) > 10:
             del searched[10:]
         return recent_search
+    
+
+m = MusicApp()
+m.suggest('Rihanna')
         

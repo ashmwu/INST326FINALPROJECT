@@ -1,3 +1,20 @@
+from argparse import ArgumentParser
+import pandas as pd
+import sys
+
+def nameofdatabase(csv, song):
+    """ This method reads a CSV file containing the different kind of songs and other information that goes along with it.
+    Args:
+        csv (str): a string that allows the csv file to be read.
+        song (str): the type of film you are looking for (song, documentary, etc)  
+    Returns:
+        A DataFrame that displays songs that match your prefrence.
+    """
+    pd.set_option('display.max_rows', None)
+    """ makes a table based on genre,etc.."""
+    df = pd.read_csv(csv)
+    print(df[df["movie"]== film])
+    
 class Music:
     """ A music selection app that can pick songs based on mood.
         Shuffle songs in a random order
