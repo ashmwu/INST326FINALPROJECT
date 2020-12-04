@@ -81,6 +81,7 @@ class MusicApp:
         return recent_search
     
 if __name__ == "__main__":
+   
     
     createUser()
     #m = MusicApp()
