@@ -5,8 +5,6 @@ import sys
 import random
 from argparse import ArgumentParser
 
-
-
 def Musiclist_326_project.csv(csv, song):
     """ This method reads a CSV file containing the different kind of songs and other information that goes along with it.
     Args:
@@ -20,7 +18,7 @@ def Musiclist_326_project.csv(csv, song):
     """ makes a table based on genre,etc.."""
     df = pd.read_csv(csv)
     print(df[df["song"]== song])
-    
+   
 class MusicApp:
     """ A music selection app similar to Spotify. 
         Creates/plays playlist based on user's mood.
@@ -31,19 +29,18 @@ class MusicApp:
         playlist(list of songs): a list of songs
         genre(list of genre): a list of genres
         artist(list of artist): a list of artists
-        
-    """
+        """
+
 
     def createUser():
         """Setting up user account along with their preferences."""
         user = input(print("Create a Username: "))
         pw = input(print("Create a password: "))
         birthday = input(print("When's your birthday: "))
-        fartist[] = input(print("Who are your top 3 favorite artist: "))
-        fgenre[] = input(print("What are the top 3 genres you listen to: "))
+        fartist = input(print("Who are your top 3 favorite artist: "))
+        fgenre = input(print("What are the top 3 genres you listen to: "))
         
-        
-    
+
     def __init__(self, genre, artist, playlist, users):
         """ initialize variables that we need
             Will change as we work on code
@@ -51,7 +48,6 @@ class MusicApp:
         self.genre = genre 
         self.artist = artist 
         self.playlist = playlist
-        self.searched = []
         
     def mood():
         """Select a mood to be able to get a list of songs that match the mood. """
@@ -70,8 +66,8 @@ class MusicApp:
                 if self.artist in row['artist_name']:
                     if row['popularity'] > 50:
                         print(row['track_name'])
-                        
-    def search(self):
+      
+     def search(self):
         with open('Musiclist_326_projects.csv') as f:
 
     def share():
@@ -105,15 +101,14 @@ class MusicApp:
 
    
 def parse_args(arglist):
-    """ Parse command-line arguments """
-    parser = ArgumentParser()
-    parser.add_argument("csv", help="the path to the csv file")
-    parser.add_argument(" ", help="the type of song you want to find")
-    return parser.parse_args(arglist)
+    """ Parse command-line arguments """
+    parser = ArgumentParser()
+    parser.add_argument("csv", help="the path to the csv file")
+    parser.add_argument(" ", help="the type of song you want to find")
+    return parser.parse_args(arglist)
 
 
 if __name__ == "__main__":
-    args = parse_args(sys.argv[1:])
-    movie_database(args.csv, args.song )
-    
-    
+    args = parse_args(sys.argv[1:])
+    movie_database(args.csv, args.song )
+
