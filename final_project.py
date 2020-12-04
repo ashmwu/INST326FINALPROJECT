@@ -51,6 +51,7 @@ class MusicApp:
         self.genre = genre 
         self.artist = artist 
         self.playlist = playlist
+        self.searched = []
         
     def mood():
         """Select a mood to be able to get a list of songs that match the mood. """
