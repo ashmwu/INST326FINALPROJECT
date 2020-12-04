@@ -1,5 +1,4 @@
 #find a database with a list of songs to import from then replace the line below
-import playlist from database
 import pandas as pd 
 import csv 
 
@@ -18,7 +17,7 @@ class MusicApp:
             Will change as we work on code
         """
         self.genre = genre 
-        self. artist = artist 
+        self.artist = artist 
         
         mood = [happy, sad, angry, frusterated, jealously, heartbreak, excited]
         artist = [Ariana Grande, BTS, Justin Bieber, Pop Smoke]
@@ -31,18 +30,17 @@ class MusicApp:
         """ """
     def function2():
         """ """
-    def suggest(self, genre, artist):
+    def suggest(self):
         """ The user enters an artist's name and the function returns that artist's more popular songs.  """
         
         with open('Musiclist_326_projects.csv') as f:
             spreadsheet = csv.Dictreader(f)
             for row in spreadsheet:
-                if row['popularity'] > 50:
-                    print(row['genre'],row['artist_name'])
+                if self.artist in row['artist_name']:
+                    if row['popularity'] > 50:
+                        print(row['track_name'])
                 
-                    
-        
-        
+                
         
 =======
     def createUser():
