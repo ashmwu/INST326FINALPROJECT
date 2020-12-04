@@ -3,12 +3,11 @@ import pandas as pd
 import csv 
 import sys
 import random
-
 from argparse import ArgumentParser
-import pandas as pd
-import sys
 
-def Musiclist_326_project.csv (csv, song):
+
+
+def Musiclist_326_project.csv(csv, song):
     """ This method reads a CSV file containing the different kind of songs and other information that goes along with it.
     Args:
         csv (str): a string that allows the csv file to be read.
@@ -16,6 +15,7 @@ def Musiclist_326_project.csv (csv, song):
     Returns:
         A DataFrame that displays songs that match your prefrence.
     """
+    
     pd.set_option('display.max_rows', None)
     """ makes a table based on genre,etc.."""
     df = pd.read_csv(csv)
@@ -68,9 +68,6 @@ class MusicApp:
                         
     def search(self):
         with open('Musiclist_326_projects.csv') as f:
-            
-            
-    
 
     def createUser():
         """Setting up user account """
@@ -105,10 +102,18 @@ class MusicApp:
     
 
 
-if __name__ == "__main__":
-
-
    
+def parse_args(arglist):
+    """ Parse command-line arguments """
+    parser = ArgumentParser()
+    parser.add_argument("csv", help="the path to the csv file")
+    parser.add_argument(" ", help="the type of song you want to find")
+    return parser.parse_args(arglist)
 
+
+if __name__ == "__main__":
+    args = parse_args(sys.argv[1:])
+    movie_database(args.csv, args.song )
+    
     
 
