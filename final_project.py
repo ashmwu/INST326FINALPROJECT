@@ -22,7 +22,6 @@ class MusicApp:
         user = input(print("Create a Username: "))
         pw = input(print("Create a password: "))
         
-    searched = []
     def __init__(self, genre, artist, playlist, users):
         """ initialize variables that we need
             Will change as we work on code
@@ -86,4 +85,4 @@ if __name__ == "__main__":
     createUser()
     #m = MusicApp()
     #m.suggest('Rihanna')
-    
+    searched = []
