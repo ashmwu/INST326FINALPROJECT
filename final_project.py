@@ -13,11 +13,12 @@ class MusicApp:
         Attributes:
             
     """
-    def __init__():
+    def __init__(self, genre, artist):
         """ initialize variables that we need
             Will change as we work on code
         """
-        
+        self.genre = genre 
+        self. artist = artist 
         mood = [happy, sad, angry, frusterated, jealously, heartbreak, excited]
         artist = [Ariana Grande, BTS, Justin Bieber, Pop Smoke]
         genre = [EDM, Pop, Rap, Lo-fi, K-Pop, Country, Indie]
