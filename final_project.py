@@ -54,7 +54,7 @@ class MusicApp:
     def suggest():
         """ Based off recent history make music suggestions. Make 
         suggestions based on artist, genre, album """
->>>>>>> e17ccdf91452e7d30a88850e3364dc65c7491795
+
     def share():
         """Share music currently listening to on social media """
     def library():
