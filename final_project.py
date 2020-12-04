@@ -58,7 +58,7 @@ class MusicApp:
         """ This will store all music that has been downloaded to the library"""
         genre = []
         artist = []
-        track - []
+        track = []
         with open('Musiclist_326_projects.csv') as f:
             spreadsheet = csv.Dictreader(f)
             for row in spreadsheet:
@@ -66,7 +66,7 @@ class MusicApp:
                     genre.append(row['genre'])
                 if row['artist_name'] not in artist:
                     artist.append(row['artist_name'])
-                track .append(row['track_name'])
+                track.append(row['track_name'])
                 
                 
             
