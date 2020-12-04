@@ -35,12 +35,15 @@ class MusicApp:
     """
 
     def createUser():
-        """Setting up user account """
+        """Setting up user account along with their preferences."""
         user = input(print("Create a Username: "))
         pw = input(print("Create a password: "))
+        birthday = input(print("When's your birthday: "))
+        fartist[] = input(print("Who are your top 3 favorite artist: "))
+        fgenre[] = input(print("What are the top 3 genres you listen to: "))
         
-
-    searched = []
+        
+    
     def __init__(self, genre, artist, playlist, users):
         """ initialize variables that we need
             Will change as we work on code
@@ -69,10 +72,6 @@ class MusicApp:
                         
     def search(self):
         with open('Musiclist_326_projects.csv') as f:
-
-    def createUser():
-        """Setting up user account """
-      
 
     def share():
         """Share music currently listening to on social media """
