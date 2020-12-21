@@ -32,8 +32,8 @@ class MusicApp:
         """
 
 
-    def createUser():
-        """Setting up user account along with their preferences."""
+    def createUser(self):
+        """Setting up user account """
         user = input(print("Create a Username: "))
         pw = input(print("Create a password: "))
         birthday = input(print("When's your birthday: "))
@@ -49,18 +49,19 @@ class MusicApp:
         self.artist = artist 
         self.playlist = playlist
         
-    def mood():
+    #def mood():
         """Select a mood to be able to get a list of songs that match the mood. """
     def shuffle(self):
         """ Randomly shuffles the music in a specific playlist."""
         f = open("Musiclist_326_project.csv", "r")
-        playlist.random(f)
+        self.playlist.random(f)
+        
         
     def suggest(self):
         """ The user enters an artist's name and the function returns that artist's more popular songs.  """
         
         with open('Musiclist_326_projects.csv') as f:
-            spreadsheet = csv.Dictreader(f)
+            spreadsheet = csv.DictReader(f)
             searched.append[self.artist]
             for row in spreadsheet:
                 if self.artist in row['artist_name']:
@@ -68,18 +69,25 @@ class MusicApp:
                         print(row['track_name'])
       
      def search(self):
+         """This s"""
         with open('Musiclist_326_projects.csv') as f:
+            
+            
 
-    def share():
+    #def share():
         """Share music currently listening to on social media """
         
-    def library():
-        """ This will store all music that has been downloaded to the library"""
+    def library(self):
+        """ This will store all music that has been downloaded to the library. For every 
+        row in the file, if the genre and artist name are not in the 'genre' and 'artist'
+        list, it will append them to the list and if they are it will skip to the next condition. 
+        For every row in the file, it will append the track name to the 'track' list. This
+        essentially will be a library containing the Genre, artist name, and the song."""
         genre = []
         artist = []
         track = []
         with open('Musiclist_326_projects.csv') as f:
-            spreadsheet = csv.Dictreader(f)
+            spreadsheet = csv.DictReader(f)
             for row in spreadsheet:
                 if row['genre'] not in genre:
                     genre.append(row['genre'])
@@ -110,5 +118,6 @@ def parse_args(arglist):
 
 if __name__ == "__main__":
     args = parse_args(sys.argv[1:])
-    movie_database(args.csv, args.song )
-
+    Musiclist_326_project.csv(args.csv, args.artist )
+    
+    
