@@ -67,11 +67,15 @@ class MusicApp:
                 if self.artist in row['artist_name']:
                     if row['popularity'] > 50:
                         print(row['track_name'])
-      
-     def search(self):
-         """This s"""
-        with open('Musiclist_326_projects.csv') as f:
-            
+    
+    def search(self, ):
+         """This funtion """
+         
+        df = pd.read_csv("Musiclist_326_projects.csv")
+        song = df[df['track_name'] == user_input]
+        print(song)
+        artist = df[df['artist_name'] == artist_input]
+        print(artist )
             
 
     #def share():
@@ -117,6 +121,9 @@ def parse_args(arglist):
 
 
 if __name__ == "__main__":
+    
+    song_input = input("What song would you like to listen to today?")
+    artist_input = input("Which artist do you want to listen to today?")
     args = parse_args(sys.argv[1:])
     Musiclist_326_project.csv(args.csv, args.artist )
     
