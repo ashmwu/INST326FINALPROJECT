@@ -1,62 +1,140 @@
-#find a database with a list of songs to import from then replace the line below
 import pandas as pd 
 import csv 
 import sys
 import random
 from argparse import ArgumentParser
+import collections
+import time
 
-def Musiclist_326_project.csv(csv, song):
-    """ This method reads a CSV file containing the different kind of songs and other information that goes along with it.
-    Args:
-        csv (str): a string that allows the csv file to be read.
-        song (str): the type of song you are looking for (song, genre, etc)  
-    Returns:
-        A DataFrame that displays songs that match your prefrence.
-    """
+class AppUser:
+    """Stores username, favorite genres, and playlists"""
     
-    pd.set_option('display.max_rows', None)
-    """ makes a table based on genre,etc.."""
-    df = pd.read_csv(csv)
-    print(df[df["song"]== song])
+    def __init__(self, username):
+        self.username = username
+        
+        #collect user's top 3 favorite genres to build playlists from
+        self.fav_genres = []
+        
+        #key is playlist name, value is list of song name
+        self.playlists = {}
    
 class MusicApp:
-    """ A music selection app similar to Spotify. 
-        Creates/plays playlist based on user's mood.
-        Create artist profiles that includes their music sorted by album release dates which users can listen to.
-        
-        
-        Attributes:
-        playlist(list of songs): a list of songs
-        genre(list of genre): a list of genres
-        artist(list of artist): a list of artists
-        """
+    """A music selection app with a library of songs that can create new app users, 
+    create playlists for those users, and allows users to name the playlist"""
 
+    def __init__(self):
+        self.catelog = pd.read_csv('Musiclist_326_project.csv')
+        
+        #key value pair of usernames and user objects
+        self.users = collections.defaultdict(AppUser)
+        self.cur_user = None
+        self.genres = self.catelog['genre'].unique()
+        
+        #welcome message
+        print("Welcome to MusicApp!\n")
 
-    def createUser(self):
-        """Setting up user account """
-        user = input(print("Create a Username: "))
-        pw = input(print("Create a password: "))
-        birthday = input(print("When's your birthday: "))
-        fartist = input(print("Who are your top 3 favorite artist: "))
-        fgenre = input(print("What are the top 3 genres you listen to: "))
+    def createNewUser(self, username):
+        """Create a new user for our MusicApp"""
         
+        new_user = AppUser(username)
+        
+        self.users[username] = new_user
+        
+        print("Welcome, " + username + "!\n")
+        print("Please choose your 3 favorite genres")
+        print("Here are your options:")
+        
+        print(self.genres)
+        
+        mod = [" ", "second ", "third "]
+        mod_ind = 0
+        
+        while mod_ind < 3:
+            cur_genre = str(input("Enter your " + mod[mod_ind] + "favorite genre: "))
+            if cur_genre not in self.genres:
+                print("Sorry, please enter a valid genre")
+                continue
+            else:
+                new_user.fav_genres.append(cur_genre)
+                mod_ind += 1
 
-    def __init__(self, genre, artist, playlist, users):
-        """ initialize variables that we need
-            Will change as we work on code
-        """
-        self.genre = genre 
-        self.artist = artist 
-        self.playlist = playlist
+        return new_user   
+    
+    def create_playlist(self, cur_user):
+        """Create up to 5 random playlists of 15 songs based on one of the user's
+        favorite genres, 5 from each genre"""
         
-    #def mood():
-        """Select a mood to be able to get a list of songs that match the mood. """
-    def shuffle(self):
-        """ Randomly shuffles the music in a specific playlist."""
-        f = open("Musiclist_326_project.csv", "r")
-        self.playlist.random(f)
+        if len(cur_user.playlists) > 4:
+            print("Maximum number of playlists reached")
+            return
+
+        playlist_name = input("Give your playlist a name: ")
         
+        print("Here are your favorite genres: " + str(cur_user.fav_genres))
         
+        playlist = []
+        
+        for g in cur_user.fav_genres:
+            genre_songs = self.catelog[self.catelog['genre'] == g]
+            genre_songs = genre_songs[['genre', 'artist_name', 'track_name']]
+            picks = genre_songs.sample(n=5)
+            playlist.append(picks)
+            
+        playlist = pd.concat(playlist)
+        
+        print("This is your playlist!")
+        print(playlist)
+        
+        cur_user.playlists[playlist_name] = playlist
+        
+    def choose_playlist(self, cur_user):
+        """Choose which playlist you want to play"""
+        print(list(cur_user.playlists.keys()))
+        
+        while True:
+            name = input("Pick a playlist: ")
+            if name not in cur_user.playlists:
+                print("Please enter a valid playlist")
+                continue
+            else:
+                print('found')
+                cur_playlist = cur_user.playlists[name]
+                cur_playlist = cur_playlist.values.tolist()
+                for genre, artist, track in cur_playlist:
+                    print(f"Now playing {track} by {artist}... ")
+                    time.sleep(0.5)
+                break
+    
+    def main():
+    myMusicApp = MusicApp()
+    
+    user_name = str(input("To create an account, please enter a username: "))
+
+    cur_user = myMusicApp.createNewUser(user_name)
+
+    choice = ''
+    
+    #Start a loop that runs until the user enters the value for 'quit'.
+    while choice != 'q':
+        print(f"OK, {cur_user.username}. What would you like to do?")
+        
+        #print all choices in a series of print statements.
+        print("[1] Enter 1 to create a random playlist based on your favorite genres")
+        print("[2] Enter 2 to choose a playlist to play!")
+        print("[q] Enter q to quit.")
+
+        choice = input("Enter your choice: ")
+        
+        if choice == '1':
+            myMusicApp.create_playlist(cur_user)
+        elif choice == '2':
+            myMusicApp.choose_playlist(cur_user)
+        elif choice == 'q':
+            print('Thanks for stopping by!')
+            
+    if __name__ == "__main__":
+    main()
+            
     def suggest(self):
         """ The user enters an artist's name and the function returns that artist's more popular songs.  """
         
@@ -76,10 +154,6 @@ class MusicApp:
         print(song)
         artist = df[df['artist_name'] == artist_input]
         print(artist )
-            
-
-    #def share():
-        """Share music currently listening to on social media """
         
     def library(self):
         """ This will store all music that has been downloaded to the library. For every 
@@ -111,20 +185,6 @@ class MusicApp:
     
 
 
-   
-def parse_args(arglist):
-    """ Parse command-line arguments """
-    parser = ArgumentParser()
-    parser.add_argument("csv", help="the path to the csv file")
-    parser.add_argument(" ", help="the type of song you want to find")
-    return parser.parse_args(arglist)
 
-
-if __name__ == "__main__":
-    
-    song_input = input("What song would you like to listen to today?")
-    artist_input = input("Which artist do you want to listen to today?")
-    args = parse_args(sys.argv[1:])
-    Musiclist_326_project.csv(args.csv, args.artist )
     
     
