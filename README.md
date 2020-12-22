@@ -10,6 +10,7 @@ Instructions
 
 3. MUST CHOOSE OPTION 1 FIRST
 >This creates a random playlist for you to name.
+>Option 2 will not run without naming a playlist first
 
 4. Give the playlist a name
 >You can repeat this step to create multiple playlists
