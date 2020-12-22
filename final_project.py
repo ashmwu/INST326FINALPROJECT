@@ -34,7 +34,7 @@ class MusicApp:
         print("Welcome to MusicApp!\n")
 
     def createNewUser(self, username):
-        """Create a new user for our MusicApp"""
+        """Create a new user for our MusicApp and asks user for their favorite genres"""
         
         new_user = AppUser(username)
         
@@ -46,7 +46,7 @@ class MusicApp:
         
         print(self.genres)
         
-        mod = [" ", "second ", "third "]
+        mod = ["first ", "second ", "third "]
         mod_ind = 0
         
         while mod_ind < 3:
@@ -106,19 +106,19 @@ class MusicApp:
                 break
     
     def main():
-    myMusicApp = MusicApp()
+        myMusicApp = MusicApp()
     
-    user_name = str(input("To create an account, please enter a username: "))
+        user_name = str(input("To create an account, please enter a username: "))
 
-    cur_user = myMusicApp.createNewUser(user_name)
+        cur_user = myMusicApp.createNewUser(user_name)
 
-    choice = ''
+        choice = ''
     
     #Start a loop that runs until the user enters the value for 'quit'.
     while choice != 'q':
         print(f"OK, {cur_user.username}. What would you like to do?")
         
-        #print all choices in a series of print statements.
+        #print all choices in a series of print statements
         print("[1] Enter 1 to create a random playlist based on your favorite genres")
         print("[2] Enter 2 to choose a playlist to play!")
         print("[q] Enter q to quit.")
