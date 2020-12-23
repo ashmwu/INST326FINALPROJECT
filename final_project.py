@@ -17,6 +17,9 @@ class AppUser:
         
         #key is playlist name, value is list of song name
         self.playlists = {}
+        
+        #List for recently_searched to work
+        self.searched = []
    
 class MusicApp:
     """A music selection app with a library of songs that can create new app users, 
@@ -29,6 +32,7 @@ class MusicApp:
         self.users = collections.defaultdict(AppUser)
         self.cur_user = None
         self.genres = self.catelog['genre'].unique()
+        self.searched = []
         
         #welcome message
         print("Welcome to MusicApp!\n")
@@ -108,6 +112,36 @@ class MusicApp:
                 for genre, artist, track in cur_playlist:
                     print(f"Now playing {track} by {artist}... ")
                 break
+            
+    def search(self):
+        """This funtion """
+        df = self.catelog
+        aort = input("Artist or Title (A for artist, T for title): ")
+        if aort == "T":
+            track_name = input("Please enter a track name: ")
+            self.searched.append(track_name)
+            song = df[df['track_name'] == track_name]
+            song = song[['genre', 'artist_name', 'track_name']]
+            print(f"{song}")
+            return song
+        if aort == "A":
+            artist_name = input("Please enter a artist name: ")
+            self.searched.append(artist_name)
+            artist = df[df['artist_name'] == artist_name]
+            artist = artist[['genre', 'artist_name', 'track_name']]
+            print(f"{artist}")
+            return artist
+        
+    def recently_searched(self):
+            """Organizes list that is in suggest function to show the most recently searched artists. 
+                Will return the list with the most recent in the 0 position."""
+            recent_search = self.searched[::-1]
+            if len(recent_search) == 0:
+                print(f"No recently searched")
+            if len(recent_search) > 10:
+                del self.searched[10:]
+            print(f"{recent_search}")
+            return recent_search
     
 def main():
     myMusicApp = MusicApp()
@@ -125,6 +159,9 @@ def main():
         #print all choices in a series of print statements
         print("[1] Enter 1 to create a random playlist based on your favorite genres")
         print("[2] Enter 2 to choose a playlist to play!")
+        print("[3] Enter 3 to search for a title")
+        print("[4] Enter 4 to view search history")
+        print("[5] Enter 5 so we can suggest some songs")
         print("[q] Enter q to quit.")
 
         choice = input("Enter your choice: ")
@@ -133,94 +170,13 @@ def main():
             myMusicApp.create_playlist(cur_user)
         elif choice == '2':
             myMusicApp.choose_playlist(cur_user)
+        elif choice == '3':
+            myMusicApp.search()
+        elif choice == '4':
+            myMusicApp.recently_searched()
         elif choice == 'q':
             print('Thanks for stopping by!')
             
 if __name__ == "__main__":
     main()
-    
-            
-<<<<<<< Updated upstream
-    class suggestsearch:
-        
-        def __init__(self):
-            self.catelog = pd.read_csv('Musiclist_326_project.csv')
-            self.searched = []
-        def suggest(self):
-            """ The user enters an artist's name and the function returns that artist's more popular songs.  """
-
-            artist_name = input('Please enter the name of the artist you want to listen to')
-            df = self.catelog 
-            filters = df['popularity'] > 50        #evaluates to True for all songs with popularity > 50
-            popular_songs = df[filters]
-            col = df[artist_name, 'track_name']
-            songs = popular_songs[col]
-            return songs
-            
-            with open('Musiclist_326_projects.csv') as f:
-                spreadsheet = csv.DictReader(f)
-                for row in spreadsheet:
-                    if self.artist in row['artist_name']:
-                        if row['popularity'] > 50:
-                            print(row['track_name'])
-    
-        def search(self):
-            """This funtion """
-            df = self.catelog
-            aort = input("Artist or Title (A for artist, T for title)")
-            if aort == "T":
-                track_name = input("Please enter a track name")
-                self.searched.append(track_name)
-                song = df[df['track_name'] == track_name]
-                return song
-            if aort == "A":
-                artist_name = input("Please enter a artist name")
-                self.searched.append(artist_name)
-                artist = df[df['artist_name'] == artist_name]
-                return artist
-=======
-class suggestsearch:
-        
-    def suggest(self):
-        """ The user enters an artist's name and the function returns that artist's more popular songs.  """
-        
-        with open('Musiclist_326_projects.csv') as f:
-            spreadsheet = csv.DictReader(f)
-            searched.append[self.artist]
-            for row in spreadsheet:
-                if self.artist in row['artist_name']:
-                    if row['popularity'] > 50:
-                        print(row['track_name'])
-    
-    def search(self, ):
-        """This funtion """
-         
-        df = pd.read_csv("Musiclist_326_projects.csv")
-        song = df[df['track_name'] == user_input]
-        print(song)
-        artist = df[df['artist_name'] == artist_input]
-        
-        print(artist )
-                      
->>>>>>> Stashed changes
-            
-    def recently_searched(self):
-        """Organizes list that is in suggest function to show the most recently searched artists. 
-                Will return the list with the most recent in the 0 position."""
-<<<<<<< Updated upstream
-            recent_search = self.searched[::-1]
-            if len(recent_search) > 10:
-                del self.searched[10:]
-            return recent_search
-=======
-        recent_search = searched[::-1]
-        if len(recent_search) > 10:
-            del searched[10:]
-        return recent_search
->>>>>>> Stashed changes
-    
-
-
-
-    
     
