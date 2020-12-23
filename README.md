@@ -19,7 +19,7 @@ Instructions
 >It will print a list of the most recently searched from the search function from most recent to the least and end at the tenth search. 
 9. Enter q to quit the program.
 
-File Explaination:
+File Explainations:
 
 test_final_project.py:pytest script, tests each member's individual  functions
 final_project.py: runs our project code
