@@ -22,8 +22,11 @@ Instructions
 File Explainations:
 
 test_final_project.py:pytest script, tests each member's individual  functions
+
 final_project.py: runs our project code
+
 Musiclist_326_project.csv: data list which has track names, artist, genres
+
 README.md: instructions and explainations on our project
 
 Bibliography
@@ -44,6 +47,9 @@ Kim, S. (2020). energy.py
     [Unpublished manuscript]. University of Maryland, College Park.
 +Used to get a better understanding of how lists work
 
+Kim, S. (2020). books.py
+    [Unpublished manuscript]. University of Maryland, College Park.
+>Used to get more support for using lists
 
 
   
