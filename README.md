@@ -19,6 +19,13 @@ Instructions
 >It will print a list of the most recently searched from the search function from most recent to the least and end at the tenth search. 
 9. Enter q to quit the program.
 
+File Explaination:
+
+test_final_project.py:pytest script, tests each member's individual  functions
+final_project.py: runs our project code
+Musiclist_326_project.csv: data list which has track names, artist, genres
+README.md: instructions and explainations on our project
+
 Bibliography
 
 Wu, A. (2020). test_mortgage.py
@@ -33,6 +40,9 @@ Wu, A. (2020). cards.py
   [Unpublished manuscript]. University of Maryland, College Park.
 +Used as an example on how to write different loops within each other
 
+Kim, S. (2020). energy.py
+    [Unpublished manuscript]. University of Maryland, College Park.
++Used to get a better understanding of how lists work
 
 
 
