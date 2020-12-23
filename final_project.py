@@ -137,34 +137,40 @@ if __name__ == "__main__":
             
     class suggestsearch:
         
+        def __init__(self):
+            self.catelog = pd.read_csv('Musiclist_326_project.csv')
+            self.searched = []
         def suggest(self):
             """ The user enters an artist's name and the function returns that artist's more popular songs.  """
         
             with open('Musiclist_326_projects.csv') as f:
                 spreadsheet = csv.DictReader(f)
-                searched.append[self.artist]
                 for row in spreadsheet:
                     if self.artist in row['artist_name']:
                         if row['popularity'] > 50:
                             print(row['track_name'])
     
-        def search(self, ):
+        def search(self):
             """This funtion """
-         
-            df = pd.read_csv("Musiclist_326_projects.csv")
-            song = df[df['track_name'] == user_input]
-            print(song)
-            artist = df[df['artist_name'] == artist_input]
-        
-            print(artist )
-                      
+            df = self.catelog
+            aort = input("Artist or Title (A for artist, T for title)")
+            if aort == "T":
+                track_name = input("Please enter a track name")
+                self.searched.append(track_name)
+                song = df[df['track_name'] == track_name]
+                return song
+            if aort == "A":
+                artist_name = input("Please enter a artist name")
+                self.searched.append(artist_name)
+                artist = df[df['artist_name'] == artist_name]
+                return artist
             
         def recently_searched(self):
             """Organizes list that is in suggest function to show the most recently searched artists. 
                 Will return the list with the most recent in the 0 position."""
-            recent_search = searched[::-1]
+            recent_search = self.searched[::-1]
             if len(recent_search) > 10:
-                del searched[10:]
+                del self.searched[10:]
             return recent_search
     
 
