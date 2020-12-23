@@ -15,6 +15,7 @@ Instructions
 6. Choose option 2 and enter the name of the playlist that you just named/created
 >It should print out "Now playing..." and 15 songs
 7. Choose option 3
+>It should prompt the user twice. First it will promt the user to select A or T which stand for 'Artist' or 'Title'. If the user selects A, it will ask them to enter an Artist name. If they select T, it will ask them to enter a track name.
 8. Choose option 4 to view the recently searched
 >It will print a list of the most recently searched from the search function from most recent to the least and end at the tenth search. 
 9. Enter q to quit the program.
@@ -46,12 +47,23 @@ Wu, A. (2020). cards.py
 >Used as an example on how to write different loops within each other
 
 Kim, S. (2020). energy.py
-    [Unpublished manuscript]. University of Maryland, College Park.
+   [Unpublished manuscript]. University of Maryland, College Park.
 >Used to get a better understanding of how lists work
 
 Kim, S. (2020). books.py
-    [Unpublished manuscript]. University of Maryland, College Park.
+   [Unpublished manuscript]. University of Maryland, College Park.
 >Used to get more support for using lists
+
+Ay, Y. (2020, November 25). Spotify Dataset 1921-2020, 160k+ Tracks. Retrieved December 23, 2020, from https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks?select=data_by_artist.csv
+
+Solomon, D. (2020). test_tuition.py
+  [Unpublished manuscript]. University of Maryland, College Park.
+>Used as an example on how to develop the test scripts for my search() function
+
+Solomon, D. (2020). Module 13.2: Pandas DataFrames
+  [Unpublished manuscript]. University of Maryland, College Park.
+>Used as an example on how to develop the test scripts for my search() function
+
 
 
   
