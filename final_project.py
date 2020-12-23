@@ -142,7 +142,15 @@ if __name__ == "__main__":
             self.searched = []
         def suggest(self):
             """ The user enters an artist's name and the function returns that artist's more popular songs.  """
-        
+
+            artist_name = input('Please enter the name of the artist you want to listen to')
+            df = self.catelog 
+            filters = df['popularity'] > 50        #evaluates to True for all songs with popularity > 50
+            popular_songs = df[filters]
+            col = df[artist_name, 'track_name']
+            songs = popular_songs[col]
+            return songs
+            
             with open('Musiclist_326_projects.csv') as f:
                 spreadsheet = csv.DictReader(f)
                 for row in spreadsheet:
