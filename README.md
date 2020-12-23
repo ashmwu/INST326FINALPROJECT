@@ -33,23 +33,23 @@ Bibliography
 
 Wu, A. (2020). test_mortgage.py
   [Unpublished manuscript]. University of Maryland, College Park.
-+Used as an example to write pytest
+>Used as an example to write pytest
 
 Wu, A. (2020). exercise_appointment.py
   [Unpublished manuscript]. University of Maryland, College Park.
-+Used as an example on how to initalize efficiently using __init__ function
+>Used as an example on how to initalize efficiently using __init__ function
 
 Wu, A. (2020). cards.py
   [Unpublished manuscript]. University of Maryland, College Park.
-+Used as an example on how to write different loops within each other
+>Used as an example on how to write different loops within each other
 
 Kim, S. (2020). energy.py
     [Unpublished manuscript]. University of Maryland, College Park.
-+Used to get a better understanding of how lists work
+>Used to get a better understanding of how lists work
 
 Kim, S. (2020). books.py
     [Unpublished manuscript]. University of Maryland, College Park.
-+Used to get more support for using lists
+>Used to get more support for using lists
 
 
   
