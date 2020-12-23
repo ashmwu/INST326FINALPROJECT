@@ -6,6 +6,7 @@ from argparse import ArgumentParser
 import collections
 
 
+
 class AppUser:
     """Stores username, favorite genres, and playlists"""
     
@@ -114,7 +115,11 @@ class MusicApp:
                 break
             
     def search(self):
-        """This funtion """
+        """This funtion allows the user to search by the artist name as well as by a specific song. The user 
+        has to first select whether they want to search by the title of the song or the name of the aritst. 
+        Depending on what they choose, it will return the song they want to listen or a list of songs from the 
+        artist they would like to listen to. """
+        
         df = self.catelog
         aort = input("Artist or Title (A for artist, T for title): ")
         if aort == "T":
@@ -132,6 +137,23 @@ class MusicApp:
             print(f"{artist}")
             return artist
         
+    def suggest(self):  
+        
+        artist_name = input("Please enter an artist so we can suggest some songs")
+        
+        df = self.catelog
+        filters = df['popularity'] > 50 
+        popular_songs = df[filters]
+        col = df[artist_name]
+        songs = popular_songs[col]
+        print(songs)
+        return songs
+        
+        
+    
+ 
+  
+    
     def recently_searched(self):
             """Organizes list that is in suggest function to show the most recently searched artists. 
                 Will return the list with the most recent in the 0 position."""
@@ -159,9 +181,9 @@ def main():
         #print all choices in a series of print statements
         print("[1] Enter 1 to create a random playlist based on your favorite genres")
         print("[2] Enter 2 to choose a playlist to play!")
-        print("[3] Enter 3 to search for a title")
-        print("[4] Enter 4 to view search history")
-        print("[5] Enter 5 so we can suggest some songs")
+        print("[3] Enter 3 to search for a song or songs available by an artist ")
+        print("[4] Enter 4 to view search history ")
+        print("[5] Enter 5 so we can suggest some songs ")
         print("[q] Enter q to quit.")
 
         choice = input("Enter your choice: ")
@@ -174,9 +196,10 @@ def main():
             myMusicApp.search()
         elif choice == '4':
             myMusicApp.recently_searched()
+        elif choice == '5':
+            myMusicApp.suggest()
         elif choice == 'q':
             print('Thanks for stopping by!')
             
 if __name__ == "__main__":
     main()
-    
