@@ -139,7 +139,7 @@ class MusicApp:
             if len(recent_search) == 0:
                 print(f"No recently searched")
             if len(recent_search) > 10:
-                del self.searched[10:]
+                del recent_search[10:]
             print(f"{recent_search}")
             return recent_search
     
