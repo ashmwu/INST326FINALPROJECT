@@ -15,7 +15,9 @@ Instructions
 >OPTIONAL: You can repeat this step and create up to 3 playlists
 6. Choose option 2 and enter the name of the playlist that you just named/created
 >It should print out "Now playing..." and 15 songs
-7. Enter q to quit the program.
+7. Choose option 4 to view the recently searched
+>It will print a list of the most recently searched from the search function from most recent to the least and end at the tenth search. 
+8. Enter q to quit the program.
 
 Bibliography
 
@@ -26,6 +28,8 @@ Wu, A. (2020). test_mortgage.py
 Wu, A. (2020). exercise_appointment.py
   [Unpublished manuscript]. University of Maryland, College Park.
 >Used as an example on how to initalize efficiently using __init__ function
+
+
 
 
   
