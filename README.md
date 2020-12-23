@@ -49,7 +49,7 @@ Kim, S. (2020). energy.py
 
 Kim, S. (2020). books.py
     [Unpublished manuscript]. University of Maryland, College Park.
->Used to get more support for using lists
++Used to get more support for using lists
 
 
   
